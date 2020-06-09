@@ -14,10 +14,10 @@ let ballRadius = 15;
 let colour;
 let difficulty = 5;
 getRandomColor();
-var paddleHeight = 10;
-var paddleWidth = 75;
+let paddleHeight = 10;
+let paddleWidth = 75;
 let paddleSpeed = 5;
-var paddleX = (canvas.width-paddleWidth) / 2;
+let paddleX = (canvas.width-paddleWidth) / 2;
 let leftPressed = false;
 let rightPressed = false;
 let score = 0;
@@ -26,15 +26,15 @@ let level = 1
 let placingBricks = false;
 //brick variables 
 
-var brickRowCount = 4;
-var brickColumnCount = 5;
-var brickWidth = 75;
-var brickHeight = 20;
-var brickPadding = 10;
-var brickOffsetTop = 30;
-var brickOffsetLeft = 30;
-var bricks = [];
-var minHeight = 0;
+let brickRowCount = 4;
+let brickColumnCount = 5;
+let brickWidth = 75;
+let brickHeight = 20;
+let brickPadding = 10;
+let brickOffsetTop = 30;
+let brickOffsetLeft = 30;
+let bricks = [];
+let minHeight = 0;
 initializeBricks();
 
 
@@ -137,9 +137,9 @@ function gameOver(){
     
 }
 function getRandomColor() {
-    var letters = '0123456789ABCDEF';
-    var newColour = '#';
-    for (var i = 0; i < 6; i++) {
+    let letters = '0123456789ABCDEF';
+    let newColour = '#';
+    for (let i = 0; i < 6; i++) {
       newColour += letters[Math.floor(Math.random() * 16)];
     }
     colour = newColour;
@@ -148,8 +148,8 @@ function checkCollision(){
     let X;
     let Y;
     if(!placingBricks){
-    for(var c=0; c<brickColumnCount; c++) {
-        for(var r=0; r<brickRowCount; r++) {
+    for(let c=0; c<brickColumnCount; c++) {
+        for(let r=0; r<brickRowCount; r++) {
             X = bricks[c][r].x;
             Y = bricks[c][r].y;
 
@@ -225,19 +225,19 @@ function draw(){
 }
 // brick functions
 function initializeBricks() {
-    for(var c=0; c<brickColumnCount; c++) {
+    for(let c=0; c<brickColumnCount; c++) {
         bricks[c] = [];
-        for(var r=0; r<brickRowCount; r++) {
+        for(let r=0; r<brickRowCount; r++) {
             bricks[c][r] = { x: 0, y: 0 , status: 1};
         }
     }
 }
 function drawBricks() {
-    for(var c=0; c<brickColumnCount; c++) {
-        for(var r=0; r<brickRowCount; r++) {
+    for(let c=0; c<brickColumnCount; c++) {
+        for(let r=0; r<brickRowCount; r++) {
             if(bricks[c][r].status == 1){
-                var brickX = (c*(brickWidth+brickPadding))+brickOffsetLeft;
-                var brickY = (r*(brickHeight+brickPadding))+brickOffsetTop;
+                let brickX = (c*(brickWidth+brickPadding))+brickOffsetLeft;
+                let brickY = (r*(brickHeight+brickPadding))+brickOffsetTop;
                 bricks[c][r].x = brickX;
                 bricks[c][r].y = brickY;
                 ctx.beginPath();
