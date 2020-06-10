@@ -5,8 +5,8 @@ document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 document.addEventListener("keypress", newGame);
 //Game Constants
-var x = Math.floor(Math.random()*canvas.width);
-var y = canvas.height-30;
+let x = Math.floor(Math.random()*canvas.width);
+let y = canvas.height-30;
 let dx = 1;
 let dy = -1;
 let speed = 2;
